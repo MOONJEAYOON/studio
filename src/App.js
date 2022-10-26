@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import { webUI } from './res/js/common';
+import { webUI, floatUI, focusUI } from './res/js/common';
 
 const App = () => {
     useEffect(() => {
@@ -28,6 +28,8 @@ const App = () => {
                 }
             }
         });
+
+        floatUI.init();
     }, []);
 
     return (
