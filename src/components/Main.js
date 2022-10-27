@@ -74,7 +74,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"5-2"} onKeyDown={focusUI.doFocus} onClick={handleClick2}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_02.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -87,7 +87,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"5-3"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_03.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -100,7 +100,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"5-4"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_04.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -113,7 +113,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"5-5"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_05.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -132,7 +132,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"6-1"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_06.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -145,7 +145,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"6-2"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_07.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -158,7 +158,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"6-3"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_08.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
@@ -171,7 +171,7 @@ const Main = () => {
                         <li>
                             <button className={"usetap"} data-focus={"6-4"} onKeyDown={focusUI.doFocus}>
                                 <div className={"thumb"}>
-                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_08.png'} alt=""/>
                                     <div className={"time"}>13분 10초</div>
                                 </div>
                                 <div className={"detail"}>
