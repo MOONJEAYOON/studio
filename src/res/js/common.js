@@ -156,29 +156,23 @@ let videoUi = (function () {
     let progress;
     let progressBar;
     let toggleButton;
-    let volume;
-    let speed;
-    let fullscreen;
     let countrolsHideTimeout;
+    let fullscreen;
     return {
         init: function (container) {
             player = container;
             video = player.querySelector(".viewer");
-            controls = player.querySelector(".player__controls");
+            controls = player.querySelector(".player_controls");
             progress = player.querySelector(".progress");
-            progressBar = player.querySelector(".progress__filled");
-            toggleButton = player.querySelector(".togglePlayback");
-            volume = player.querySelector(".playerVolume");
-            speed = player.querySelector(".playerSpeed");
+            progressBar = player.querySelector(".progress_filled");
+            toggleButton = player.querySelector(".togglePlay");
             fullscreen = player.querySelector(".toggleFullscreen");
 
-            video.addEventListener("click", videoUi.togglePlay);
             video.addEventListener("timeupdate", videoUi.handleProgress);
 
             toggleButton.addEventListener("click", videoUi.togglePlay);
-            volume.addEventListener("change", videoUi.handleRangeUpdate);
-            volume.addEventListener("mousemove", videoUi.handleRangeUpdate);
-            speed.addEventListener("change", videoUi.handleRangeUpdate);
+
+            fullscreen.addEventListener("click", videoUi.toggleFullscreen);
 
             let mousedown = false;
             progress.addEventListener("click", videoUi.handleSeek);
@@ -186,26 +180,28 @@ let videoUi = (function () {
             progress.addEventListener("mousedown", () => (mousedown = true));
             progress.addEventListener("mouseup", () => (mousedown = false));
 
-            fullscreen.addEventListener("click", videoUi.toggleFullscreen);
             video.addEventListener("dblclick", videoUi.toggleFullscreen);
 
             video.addEventListener("mousemove", videoUi.toggleControls);
             controls.addEventListener("mouseover", () => {
                 clearTimeout(countrolsHideTimeout);
             });
-
+            video.play();
         },
         togglePlay: function () {
-            const icon = toggleButton.querySelector(".player__playbackIcon");
+            if (video.muted) {
+                video.muted = false;
+            }
             video.paused ? video.play() : video.pause();
-            icon.classList.toggle("player__playbackIcon--paused");
+
+            toggleButton.classList.toggle("paused");
         },
         handleRangeUpdate: function () {
             video[this.name] = this.value;
         },
         handleProgress: function () {
             const percent = video.currentTime / video.duration * 100;
-            progressBar.style.flexBasis = `${percent}%`;
+            progressBar.style.width = `${percent}%`;
         },
         handleSeek: function (e) {
             const seekTime = e.offsetX / progress.offsetWidth * video.duration;
@@ -227,9 +223,9 @@ let videoUi = (function () {
         toggleControls: function () {
             if (!video.paused) {
                 clearTimeout(countrolsHideTimeout);
-                controls.classList.add("player__controls--visible");
+                controls.classList.add("visible");
                 countrolsHideTimeout = setTimeout(() => {
-                    controls.classList.remove("player__controls--visible");
+                    controls.classList.remove("visible");
                 }, 3000);
             }
         },
@@ -272,7 +268,7 @@ const floatUI = (function () {
         onScroll: function (st) {
             const ela = document.querySelectorAll(".fix");
             const scoEla = document.querySelectorAll('.sco_block');
-            const list_wrapper = document.querySelector('.list_wrap');
+            const list_wrapper = document.querySelector('.main');
             if (ela.length) {
                 ela.forEach(function (el) {
                     if (pTop > el.getBoundingClientRect().top) {
@@ -300,9 +296,9 @@ const floatUI = (function () {
                     const rgbaCol = 'rgba(13,15,26, ' + opacityVal + ')'
                     el.style.backgroundColor = rgbaCol;
                     if (opacityVal > '1') {
-                        el.style.backgroundColor = 'rgba(13,15,26,1)';
+                        el.style.backgroundColor = 'rgba(0,0,0,1)';
                     } else if (opacityVal < '0') {
-                        el.style.backgroundColor = 'rgba(13,15,26,0)';
+                        el.style.backgroundColor = 'rgba(0,0,0,0)';
                     }
                 });
             }
@@ -312,6 +308,9 @@ const floatUI = (function () {
 
 const focusUI = (function () {
     return {
+        init: function () {
+            document.querySelector(`[data-focus="1-1"]`).focus();
+        },
         doFocus: function (e) {
            // e.preventDefault();
             if (!e.currentTarget) return;

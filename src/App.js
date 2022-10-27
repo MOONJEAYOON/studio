@@ -30,6 +30,7 @@ const App = () => {
         });
 
         floatUI.init();
+        focusUI.init();
     }, []);
 
     return (
