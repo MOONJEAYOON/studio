@@ -244,6 +244,79 @@ const Main = () => {
                     </ul>
                 </div>
 
+                <div className={"list_type_1"}>
+                    <h3>민정님을 위한 오늘의 식단 레시피 🥗</h3>
+                    <ul>
+                        <li>
+                            <a href="#" className={"usetap"} data-focus={"8-1"} onKeyDown={focusUI.doFocus}>
+                                <div className={"thumb"}>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <div className={"time"}>13분 10초</div>
+                                </div>
+                                <div className={"detail"}>
+                                    <div className={"date"}>2022.102.22</div>
+                                    <div className={"title"}>휴가 후유증도 날려버릴, 리프레시 후 정성과 열정을 가득 담은 도시락리프레시 후 정성과 열정을 가득 담은
+                                        도시락🔥
+                                    </div>
+                                    <div className={"count"}>조회수 35만회</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={"usetap"} data-focus={"8-2"} onKeyDown={focusUI.doFocus}>>
+                                <div className={"thumb"}>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <div className={"time"}>13분 10초</div>
+                                </div>
+                                <div className={"detail"}>
+                                    <div className={"date"}>2022.102.22</div>
+                                    <div className={"title"}>휴가 후유증도 날려버릴, 리프레시 후 정성과 열정을 가득 담은 도시락🔥</div>
+                                    <div className={"count"}>조회수 35만회</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={"usetap"} data-focus={"8-3"} onKeyDown={focusUI.doFocus}>>
+                                <div className={"thumb"}>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <div className={"time"}>13분 10초</div>
+                                </div>
+                                <div className={"detail"}>
+                                    <div className={"date"}>2022.102.22</div>
+                                    <div className={"title"}>휴가 후유증도 날려버릴, 리프레시 후 정성과 열정을 가득 담은 도시락🔥</div>
+                                    <div className={"count"}>조회수 35만회</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={"usetap"} data-focus={"8-4"} onKeyDown={focusUI.doFocus}>>
+                                <div className={"thumb"}>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <div className={"time"}>13분 10초</div>
+                                </div>
+                                <div className={"detail"}>
+                                    <div className={"date"}>2022.102.22</div>
+                                    <div className={"title"}>휴가 후유증도 날려버릴, 리프레시 후 정성과 열정을 가득 담은 도시락🔥</div>
+                                    <div className={"count"}>조회수 35만회</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className={"usetap"} data-focus={"8-5"} onKeyDown={focusUI.doFocus}>>
+                                <div className={"thumb"}>
+                                    <img src={process.env.PUBLIC_URL + '/images/s_image_01.png'} alt=""/>
+                                    <div className={"time"}>13분 10초</div>
+                                </div>
+                                <div className={"detail"}>
+                                    <div className={"date"}>2022.102.22</div>
+                                    <div className={"title"}>휴가 후유증도 날려버릴, 리프레시 후 정성과 열정을 가득 담은 도시락🔥</div>
+                                    <div className={"count"}>조회수 35만회</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
         

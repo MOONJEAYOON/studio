@@ -98,3 +98,17 @@ header .ic_setting { background-image: url(../images/ic_setting.png); }
 
 
 .list_type_1 .count { margin-top: 1.3rem; font-weight: 600; font-size: 2rem; line-height: 2.7rem; color: #FFFFFF; }
+
+
+@media all and (max-width: 320px) {
+}
+@media all and (min-width: 321px) and (max-width: 768px) {
+    .main { padding-left: 0; }
+    .vod_wrap { position: relative; top: initial; left: initial; width: 100%; }
+}
+@media all and (min-width: 769px) and (max-width: 1024px) {
+    #media-1024 { display: block; }
+}
+@media all and (min-width: 1025px) {
+    #media-1025 { display: block; }
+}
