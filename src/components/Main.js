@@ -29,7 +29,7 @@ const Main = () => {
                 <div className={"player_wrap fix"}>
                     <div className="player_inner">
                         <div className="player" id={"vod_player"}>
-                            <video id="myVideo" className="viewer" loop muted playsinline autoplay width="100%" height="100%" src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4"></video>
+                            <video id="myVideo" className="viewer" width="100%" height="100%" src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" loop="loop" muted="muted" autoplay="autoplay" playsinline />
                             <div className="player_controls visible">
                                 <div className="progress">
                                     <div className="progress_filled"></div>
