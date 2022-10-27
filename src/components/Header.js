@@ -1,4 +1,4 @@
-import { webUI, navUi, focusUI } from '../res/js/common';
+import { navUi, focusUI } from '../res/js/common';
 
 import React, { useEffect } from "react";
 
@@ -10,19 +10,19 @@ const Header = () => {
         <>
             <header className={"fixed_header_wrap"}>
                 <div className={"fixed_header"}>
-                    <h1><a href="#" className="logo usetap" aria-label="U+미디어Studio" data-focus={"1-1"} onKeyDown={focusUI.doFocus}></a></h1>
+                    <h1><a href="{()=>false}" className="logo usetap" aria-label="U+미디어Studio" data-focus={"1-1"} onKeyDown={focusUI.doFocus}></a></h1>
                     <ul className={"user_info"}>
                         <li>
-                            <a href="#" className={"ic_mypage usetap"} aria-label="마이페이지" data-focus={"2-1"} onKeyDown={focusUI.doFocus}></a>
+                            <a href="{()=>false}" className={"ic_mypage usetap"} aria-label="마이페이지" data-focus={"2-1"} onKeyDown={focusUI.doFocus}></a>
                         </li>
                         <li>
-                            <a href="#" className={"ic_search usetap"} aria-label="검색" data-focus={"2-2"} onKeyDown={focusUI.doFocus}></a>
+                            <a href="{()=>false}" className={"ic_search usetap"} aria-label="검색" data-focus={"2-2"} onKeyDown={focusUI.doFocus}></a>
                         </li>
                         <li>
-                            <a href="#" className={"ic_alarm usetap"} aria-label="알람" data-focus={"2-3"} onKeyDown={focusUI.doFocus}></a>
+                            <a href="{()=>false}" className={"ic_alarm usetap"} aria-label="알람" data-focus={"2-3"} onKeyDown={focusUI.doFocus}></a>
                         </li>
                         <li>
-                            <a href="#" className={"ic_setting usetap"} aria-label="설정" data-focus={"2-4"} onKeyDown={focusUI.doFocus}></a>
+                            <a href="{()=>false}" className={"ic_setting usetap"} aria-label="설정" data-focus={"2-4"} onKeyDown={focusUI.doFocus}></a>
                         </li>
                     </ul>
                 </div>
@@ -35,7 +35,7 @@ const Header = () => {
                         <div className={"menu_list_wrap"} id={"mainNav"}>
                             <ul>
                                 <li className={"tab_link current"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-1"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-1"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_01.png'}/>
                                         </div>
@@ -43,7 +43,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-2"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-2"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_02.png'}/>
                                         </div>
@@ -51,7 +51,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-3"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-3"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_03.png'}/>
                                         </div>
@@ -59,7 +59,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-4"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-4"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_04.png'}/>
                                         </div>
@@ -67,7 +67,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-5"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-5"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_05.png'}/>
                                         </div>
@@ -75,7 +75,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-6"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-6"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_06.png'}/>
                                         </div>
@@ -83,7 +83,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-7"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-7"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_07.png'}/>
                                         </div>
@@ -91,7 +91,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-8"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-8"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_08.png'}/>
                                         </div>
@@ -99,7 +99,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-9"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-9"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_09.png'}/>
                                         </div>
@@ -107,7 +107,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-10"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-10"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_01.png'}/>
                                         </div>
@@ -115,7 +115,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-11"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-11"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_02.png'}/>
                                         </div>
@@ -123,7 +123,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-12"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-12"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_03.png'}/>
                                         </div>
@@ -131,7 +131,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-13"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-13"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_01.png'}/>
                                         </div>
@@ -139,7 +139,7 @@ const Header = () => {
                                     </a>
                                 </li>
                                 <li className={"tab_link"}>
-                                    <a href="#" className={"usetap"} data-focus={"3-14"} onKeyDown={focusUI.doFocus}>
+                                    <a href="{()=>false}" className={"usetap"} data-focus={"3-14"} onKeyDown={focusUI.doFocus}>
                                         <div className={"thumb"}>
                                             <img src={process.env.PUBLIC_URL + '/images/menutree_01.png'}/>
                                         </div>

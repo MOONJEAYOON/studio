@@ -149,6 +149,93 @@ let navUi = (function () {
 })();
 
 
+let videoUi = (function () {
+    let player;
+    let video;
+    let controls;
+    let progress;
+    let progressBar;
+    let toggleButton;
+    let volume;
+    let speed;
+    let fullscreen;
+    let countrolsHideTimeout;
+    return {
+        init: function (container) {
+            player = container;
+            video = player.querySelector(".viewer");
+            controls = player.querySelector(".player__controls");
+            progress = player.querySelector(".progress");
+            progressBar = player.querySelector(".progress__filled");
+            toggleButton = player.querySelector(".togglePlayback");
+            volume = player.querySelector(".playerVolume");
+            speed = player.querySelector(".playerSpeed");
+            fullscreen = player.querySelector(".toggleFullscreen");
+
+            video.addEventListener("click", videoUi.togglePlay);
+            video.addEventListener("timeupdate", videoUi.handleProgress);
+
+            toggleButton.addEventListener("click", videoUi.togglePlay);
+            volume.addEventListener("change", videoUi.handleRangeUpdate);
+            volume.addEventListener("mousemove", videoUi.handleRangeUpdate);
+            speed.addEventListener("change", videoUi.handleRangeUpdate);
+
+            let mousedown = false;
+            progress.addEventListener("click", videoUi.handleSeek);
+            progress.addEventListener("mousemove", e => mousedown && videoUi.handleSeek(e));
+            progress.addEventListener("mousedown", () => (mousedown = true));
+            progress.addEventListener("mouseup", () => (mousedown = false));
+
+            fullscreen.addEventListener("click", videoUi.toggleFullscreen);
+            video.addEventListener("dblclick", videoUi.toggleFullscreen);
+
+            video.addEventListener("mousemove", videoUi.toggleControls);
+            controls.addEventListener("mouseover", () => {
+                clearTimeout(countrolsHideTimeout);
+            });
+
+        },
+        togglePlay: function () {
+            const icon = toggleButton.querySelector(".player__playbackIcon");
+            video.paused ? video.play() : video.pause();
+            icon.classList.toggle("player__playbackIcon--paused");
+        },
+        handleRangeUpdate: function () {
+            video[this.name] = this.value;
+        },
+        handleProgress: function () {
+            const percent = video.currentTime / video.duration * 100;
+            progressBar.style.flexBasis = `${percent}%`;
+        },
+        handleSeek: function (e) {
+            const seekTime = e.offsetX / progress.offsetWidth * video.duration;
+            video.currentTime = seekTime;
+        },
+        toggleFullscreen: function () {
+            if (!document.webkitFullscreenElement) {
+                if (video.requestFullScreen) {
+                    player.requestFullScreen();
+                } else if (video.webkitRequestFullScreen) {
+                    player.webkitRequestFullScreen();
+                } else if (video.mozRequestFullScreen) {
+                    player.mozRequestFullScreen();
+                }
+            } else {
+                document.webkitExitFullscreen();
+            }
+        },
+        toggleControls: function () {
+            if (!video.paused) {
+                clearTimeout(countrolsHideTimeout);
+                controls.classList.add("player__controls--visible");
+                countrolsHideTimeout = setTimeout(() => {
+                    controls.classList.remove("player__controls--visible");
+                }, 3000);
+            }
+        },
+    };
+})();
+
 
 const floatUI = (function () {
     let pTop;
@@ -369,4 +456,4 @@ const layerPopup = (function() {
     };
 })();
 
-export {webUI, navUi, floatUI, layerPopup, focusUI}
+export {webUI, navUi, floatUI, layerPopup, focusUI, videoUi}
