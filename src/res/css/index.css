@@ -1,3 +1,5 @@
+/* webfont rules */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 *{font-display:swap;}
 *:not(input){font-family:"Noto Sans KR";}
 
@@ -31,9 +33,12 @@ fieldset,img {border:0;}
   }
 }
 /* REM rules */
-html {font-size:5px;}
+html {font-size:4px;}
 @media screen and (min-width: 360px) and (orientation: portrait) {
 	html {font-size:5px;}
+}
+@media screen and (min-width: 390px) and (orientation: portrait) {
+    html {font-size:5.6px;}
 }
 @media screen and (min-width: 768px) and (orientation: portrait) {
 	html {font-size:7px;}

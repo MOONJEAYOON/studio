@@ -186,17 +186,25 @@ let videoUi = (function () {
             controls.addEventListener("mouseover", () => {
                 clearTimeout(countrolsHideTimeout);
             });
+            video.load();
             video.setAttribute('playsinline', '');
-         //   video.muted = true;
+            video.autoplay = true;
+            video.muted = true;
             video.play();
+
+
         },
         togglePlay: function () {
             if (video.muted) {
                 video.muted = false;
             }
-            video.paused ? video.play() : video.pause();
-
-            toggleButton.classList.toggle("paused");
+            if (video.paused) {
+                video.play();
+                toggleButton.classList.add("paused");
+            } else {
+                video.pause();
+                toggleButton.classList.remove("paused");
+            }
         },
         handleRangeUpdate: function () {
             video[this.name] = this.value;
