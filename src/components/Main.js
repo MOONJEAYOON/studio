@@ -36,7 +36,7 @@ const Main = () => {
                                 </div>
                                 <div className="player_btn_a">
                                     <button className={"togglePlay paused usetap"} type="button" aria-label="재생/정지" data-focus={"4-1"} onKeyDown={focusUI.doFocus}></button>
-                                    <button className="toggleFullscreen" aria-label="전체화면" data-focus={"4-2"}>⛶</button>
+                                    <button className="toggleFullscreen" aria-label="전체화면" data-focus={"4-2"} onKeyDown={focusUI.doFocus}>전체화면</button>
                                 </div>
                             </div>
                         </div>
