@@ -186,6 +186,8 @@ let videoUi = (function () {
             controls.addEventListener("mouseover", () => {
                 clearTimeout(countrolsHideTimeout);
             });
+            video.setAttribute('playsinline', '');
+         //   video.muted = true;
             video.play();
         },
         togglePlay: function () {
