@@ -1,10 +1,11 @@
 import { navUi, focusUI } from '../res/js/common';
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const Header = () => {
+    const  mainNav = useRef();
     useEffect(() => {
-        navUi.initMainNav(document.getElementById('mainNav'));
+        navUi.initMainNav(mainNav.current);
     }, []);
     return (
         <>
@@ -29,10 +30,10 @@ const Header = () => {
             </header>
             <nav className={"tab_menu_wrap fix"}>
                 <div className={"fix_inner sco_block"}>
-                    <div className={"menu_wrap"}>
+                    <div className={"menu_wrap"} ref={mainNav}>
                         <button type={"button"} className={"ic_arrow_prev usetap"} aria-label="이전메뉴"></button>
                         <button type={"button"} className={"ic_arrow_next on usetap"} aria-label="다음메뉴"></button>
-                        <div className={"menu_list_wrap"} id={"mainNav"}>
+                        <div className={"menu_list_wrap"}>
                             <ul>
                                 <li className={"tab_link current"}>
                                     <button className={"usetap"} data-focus={"3-1"} onKeyDown={focusUI.doFocus}>
@@ -153,6 +154,6 @@ const Header = () => {
             </nav>
         </>
     )
-  }
+}
   
-  export default Header
+export default Header

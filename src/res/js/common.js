@@ -99,7 +99,8 @@ const webUI = (function() {
 
 let navUi = (function () {
     return {
-        initMainNav: function (node) {
+        initMainNav: function (container) {
+            const node = container.querySelector('.menu_list_wrap');
             webUI.addDelegate(node, "click", ".tab_link", function (e) {
                 e.preventDefault();
                 if (!this.classList.contains("current")) {
@@ -127,7 +128,7 @@ let navUi = (function () {
                     node.parentNode.querySelector('.ic_arrow_next').classList.add('on')
                 }
             });
-            webUI.addDelegate(node.parentNode, "click", ".ic_arrow_prev", function (e) {
+            webUI.addDelegate(container, "click", ".ic_arrow_prev", function (e) {
                 e.preventDefault();
                 webUI.animatedScrollTo(
                     node,
@@ -135,7 +136,7 @@ let navUi = (function () {
                     300
                 );
             });
-            webUI.addDelegate(node.parentNode, "click", ".ic_arrow_next", function (e) {
+            webUI.addDelegate(container, "click", ".ic_arrow_next", function (e) {
                 e.preventDefault();
                 webUI.animatedScrollTo(
                     node,
@@ -143,7 +144,6 @@ let navUi = (function () {
                     300
                 );
             });
-
         }
     };
 })();
@@ -168,6 +168,8 @@ let videoUi = (function () {
             toggleButton = player.querySelector(".togglePlay");
             fullscreen = player.querySelector(".toggleFullscreen");
 
+            video.addEventListener('webkitendfullscreen', videoUi.fullScreenChanged);
+
             video.addEventListener("timeupdate", videoUi.handleProgress);
 
             toggleButton.addEventListener("click", videoUi.togglePlay);
@@ -186,7 +188,7 @@ let videoUi = (function () {
             controls.addEventListener("mouseover", () => {
                 clearTimeout(countrolsHideTimeout);
             });
-            video.load();
+            // video.load();
             video.setAttribute('playsinline', '');
             video.autoplay = true;
             video.muted = true;
@@ -218,17 +220,25 @@ let videoUi = (function () {
             video.currentTime = seekTime;
         },
         toggleFullscreen: function () {
-            if (!document.webkitFullscreenElement) {
-                if (video.requestFullScreen) {
-                    player.requestFullScreen();
-                } else if (video.webkitRequestFullScreen) {
-                    player.webkitRequestFullScreen();
-                } else if (video.mozRequestFullScreen) {
-                    player.mozRequestFullScreen();
+            if (!document.fullscreenElement) {
+                if("requestFullscreen" in player) {
+                    player.requestFullscreen();
+                } else {
+                    video.pause();
+                    video.removeAttribute('playsinline');
+                    video.play();
                 }
             } else {
-                document.webkitExitFullscreen();
+                document.exitFullscreen();
             }
+        },
+        fullScreenChanged: function () {
+            setTimeout(function() {
+                video.pause();
+                video.setAttribute('playsinline', '');
+                video.play();
+            }, 500);
+
         },
         toggleControls: function () {
             if (!video.paused) {

@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import {focusUI, videoUi} from '../res/js/common';
 
 const Main = () => {
+    const vodPlayer = useRef();
     useEffect(() => {
-        videoUi.init(document.getElementById('vod_player'));
+        videoUi.init(vodPlayer.current);
     }, []);
     const handleClick1 = () => {
         let vid = document.getElementById("myVideo");
@@ -28,7 +29,7 @@ const Main = () => {
             <div className={"vod_wrap"}>
                 <div className={"player_wrap fix"}>
                     <div className="player_inner">
-                        <div className="player" id={"vod_player"}>
+                        <div className="player" ref={vodPlayer}>
                             <video id="myVideo" className="viewer" width="100%" height="100%" src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4" loop="loop"></video>
                             <div className="player_controls visible">
                                 <div className="progress">
